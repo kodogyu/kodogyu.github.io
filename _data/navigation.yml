@@ -11,5 +11,9 @@ main:
 docs:
   - title: "ROS2"
     children:
+     - title: "ROS2 setup 및 tutorial"
+       url: /posts/ROS2-setup-및-tutorial/
      - title: "ROS2 실습 과정 중 문제발생 및 해결"
-       url: /posts/ROS2 tutorial 중 겪은 문제 및 해결
+       url: /posts/ROS2-실습과정-중-오류발생-및-해결/
+     - title: "ROS2 주의 및 참고사항"
+       url: /posts/ROS2-주의-및-참고사항/
