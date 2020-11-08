@@ -72,12 +72,12 @@ author:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/kodogyu"
-    - label: "Email"
-      icon: "fas fa-envelope-square"
-      url: "mailto:kodogyu4756@gmail.com"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       url: "https://instagram.com/"
+    - label: "Email"
+      icon: "fas fa-envelope-square"
+      url: "mailto:kodogyu4756@gmail.com"
 
 footer:
   links:
