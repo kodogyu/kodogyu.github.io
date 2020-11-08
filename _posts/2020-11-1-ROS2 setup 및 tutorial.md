@@ -1,5 +1,5 @@
 ---
-title: ROS2 주의 및 참고사항
+title: ROS2 setup 및 tutorial
 tags:
   - study
   - ROS2
