@@ -12,4 +12,4 @@ docs:
   - title: "ROS2"
     children:
      - title: "ROS2 실습 과정 중 문제발생 및 해결"
-       url: /posts/
+       url: /posts/ROS2 tutorial 중 겪은 문제 및 해결
