@@ -61,6 +61,7 @@ author:
   name   : "Kodogyu"
   avatar : "/assets/images/bio-photo.jpg"
   bio    : "Blog writing about things learned while studying."
+  location: "South Korea"
   links:
     - label: "Website"
       icon: "fas fa-fw fa-link"
@@ -71,6 +72,9 @@ author:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/kodogyu"
+    - label: "Email"
+      icon: "fas fa-envelope-square"
+      url: "mailto:kodogyu4756@gmail.com"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       url: "https://instagram.com/"
