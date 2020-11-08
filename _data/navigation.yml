@@ -7,3 +7,9 @@ main:
     url: /tags/
   - title: "About"
     url: /about/
+  
+docs:
+  - title: "ROS2"
+    children:
+     - title: "ROS2 실습 과정 중 문제발생 및 해결"
+       url: /posts/
