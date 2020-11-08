@@ -3,6 +3,8 @@ title: ROS2 setup 및 tutorial
 tags:
   - study
   - ROS2
+sidebar:
+  nav: "docs"
 ---
 개발환경:  
  -OS: Linux mint 20 cinnamon  
