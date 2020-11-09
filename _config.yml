@@ -16,9 +16,7 @@
 title: Kodogyu
 email:
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  공부하면서 배운 여러가지 지식들을 기록하는 일기 같은 블로그입니다. Linux, ROS 등의 내용을 써가고 있습니다.
 twitter_username: username
 github_username: username
 minimal_mistakes_skin: default
