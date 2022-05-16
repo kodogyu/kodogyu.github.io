@@ -12,8 +12,15 @@ docs:
   - title: "ROS2"
     children:
      - title: "ROS2 setup 및 tutorial"
-       url: /ROS2-setup-및-tutorial/
+       url: /ROS2-개발환경과-tutorial-링크/
      - title: "ROS2 실습 과정 중 문제발생 및 해결"
        url: /ROS2-실습과정-중-오류발생-및-해결/
      - title: "ROS2 주의 및 참고사항"
        url: /ROS2-주의-및-참고사항/
+
+  - title: "Modern Robotics"
+    children:
+      - title: "Modern Robotics의 시작"
+        url: /Modern Robotics1/
+      - title: "Modern Robotics, Course 1"
+        url: /Modern Robotics2/

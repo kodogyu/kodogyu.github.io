@@ -1,6 +1,8 @@
 ---
 title: Modern Robotics, Course1
 subtitle: Modern Robotics Chapter 2 - Configuration Space
+toc: true
+toc_label: "내용 목차"
 tags: [study, robotics]
 ---
 
