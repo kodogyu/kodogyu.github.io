@@ -16,13 +16,14 @@ tags: [study, robotics]
 <br>
 
 책의 p.32 Figure 2.1을 보면  
+![MR Figure 2.1](/assets/images/MR Figure 2.1.png)
 (a)의 문은 그 위치를 표현하기 위해 경첩을 기준으로 얼마나 회전했는지에 대한 각도 1개만 있으면 됩니다.  
 (b)의 점은 평면 상의 점이므로 점의 좌표인 x, y 2개의 값으로 위치를 표현할 수 있습니다.  
 (c)의 동전은 동전위의 한 점의 x,y 좌표와 동전이 기울어진 정도 (각도) 3개의 값으로 위치를 표현할 수 있습니다.  
 <br>
 
 Figure 2.2를 통해 강체의 자유도를 알아봅시다.  
-(b)에서 점 A, B, C는 모두 각각 2개의 좌표(값)로 표현가능합니다. {x<sub>A</sub>, y<sub>A</sub>, x<sub>B</sub>, y<sub>B</sub>, x<sub>C</sub>, y<sub>C</sub>} 6개의 임의의 값(독립적인 값, independent)으로 동전의 위치를 정할 수 있으면 이는 6의 dof를 갖는 것입니다.  
+(b)에서 점 A, B, C는 모두 각각 2개의 좌표(값)로 표현가능합니다. {(x<sub>A</sub>, y<sub>A</sub>), (x<sub>B</sub>, y<sub>B</sub>), (x<sub>C</sub>, y<sub>C</sub>)} 6개의 임의의 값(독립적인 값, independent)으로 동전의 위치를 정할 수 있으면 이는 6의 dof를 갖는 것입니다.  
 하지만 동전은 강체(rigid)이므로 A가 정해지면 A,B 간의 거리(d(A, B))가 일정함에 의해 B의 위치가 제한(constraint)됩니다. 그 위치는 A를 중심으로 하고 반지름의 d<sub>AB</sub>인 원 위이죠.  
 이때 B의 위치는 phi<sub>AB</sub>(AB벡터와 x축 벡터가 이루는 각)하나로 표현이 가능합니다. 이후 점 C의 위치는 원AC, 원BC의 두 교점에서 가능한데, 이는 동전의 앞, 뒤에 따른 것이므로 사전에 동전의 면을 지정하면 C의 위치는 명백해집니다(C is fixed).  
 따라서 동전의 평면에서의 위치(configuration)는 (x<sub>A</sub>, y<sub>A</sub>, phi<sub>AB</sub>) 이렇게 표현이 가능하고 3의 dof를 갖는다는 걸 알 수 있습니다.  
