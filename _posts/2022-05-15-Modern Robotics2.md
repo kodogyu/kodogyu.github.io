@@ -22,14 +22,16 @@ tags: [study, robotics]
 (c)의 동전은 동전위의 한 점의 x,y 좌표와 동전이 기울어진 정도 (각도) 3개의 값으로 위치를 표현할 수 있습니다.  
 <br>
 
-Figure 2.2를 통해 강체의 자유도를 알아봅시다.  
+Figure 2.2를 통해 강체의 자유도를 알아봅시다. 
+![MR Figure 2.2](/assets/images/MR Figure 2.2.png) 
 (b)에서 점 A, B, C는 모두 각각 2개의 좌표(값)로 표현가능합니다. {(x<sub>A</sub>, y<sub>A</sub>), (x<sub>B</sub>, y<sub>B</sub>), (x<sub>C</sub>, y<sub>C</sub>)} 6개의 임의의 값(독립적인 값, independent)으로 동전의 위치를 정할 수 있으면 이는 6의 dof를 갖는 것입니다.  
 하지만 동전은 강체(rigid)이므로 A가 정해지면 A,B 간의 거리(d(A, B))가 일정함에 의해 B의 위치가 제한(constraint)됩니다. 그 위치는 A를 중심으로 하고 반지름의 d<sub>AB</sub>인 원 위이죠.  
 이때 B의 위치는 phi<sub>AB</sub>(AB벡터와 x축 벡터가 이루는 각)하나로 표현이 가능합니다. 이후 점 C의 위치는 원AC, 원BC의 두 교점에서 가능한데, 이는 동전의 앞, 뒤에 따른 것이므로 사전에 동전의 면을 지정하면 C의 위치는 명백해집니다(C is fixed).  
 따라서 동전의 평면에서의 위치(configuration)는 (x<sub>A</sub>, y<sub>A</sub>, phi<sub>AB</sub>) 이렇게 표현이 가능하고 3의 dof를 갖는다는 걸 알 수 있습니다.  
 <br>
 
-이 예를 일반적인 규칙으로 적용하면 dof에 대한 공식을 얻습니다.(식 2.1)    
+이 예를 일반적인 규칙으로 적용하면 dof에 대한 공식을 얻습니다.(식 2.1)  
+![dof 공식](/assets/images/dof 공식.png)  
 dof = 지점들의 자유도의 합 - 제한들(constraints)의 갯수  
 <br>
 
