@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Modern Robotics, Course1
 subtitle: Modern Robotics Chapter 2 - Configuration Space
 tags: [study, robotics]
