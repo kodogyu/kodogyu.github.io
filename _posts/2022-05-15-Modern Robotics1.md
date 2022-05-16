@@ -2,7 +2,9 @@
 layout : post
 title : Modern Robotics의 시작
 subtitle : Modern Robotics Get Started & Chapter 1
-tags : [study, robotics]
+tags : 
+ - study
+ - robotics
 ---
 
 로보틱스에 대한 공부를 해보고자 coursera에 등록된 Kevin Lynch 교수님의 강의 [Modern Robotics: Mechanics, Plannning, and Control](https://www.coursera.org/specializations/modernrobotics)를 듣고 학습한 내용을 정리합니다.
