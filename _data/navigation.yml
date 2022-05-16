@@ -21,6 +21,6 @@ docs:
   - title: "Modern Robotics"
     children:
       - title: "Modern Robotics의 시작"
-        url: /Modern Robotics1/
+        url: /Modern-Robotics1/
       - title: "Modern Robotics, Course 1"
-        url: /Modern Robotics2/
+        url: /Modern-Robotics2/
