@@ -104,3 +104,78 @@ _N_ = 4, _J_ = 4, _f<sub>i</sub>_ = 1, _i_ = 1,...,4를 Grubler's formula에 대
 1. 매커니즘은 2개의 revolute joint (_f<sub>i</sub>_ = 1)와 1개의 RP joint(revolute and prismatic joint의 약자, _f<sub>i</sub>_ = 2)를 가지고 3개의 link로 이루어져있다(_N_ = 3; 각 joint는 2개의 link만을 연결해야 하기 때문).  
 
 두가지 방법 모두에서 메커니즘은 1의 dof를 가진다.
+<br>
+
+---
+
+# 2.3 Configuration Space : Topology and Representation  
+<br>
+
+## 2.3.1 Configuration Space Topology  
+로봇의 C-space에서 dof만큼 중요한 것이 그 공간의 **모양**(shape)입니다.  
+<br>
+
+**구의 표면** 위에 있는 점을 생각해 봅시다.  
+이 점을 표현하기 위해서는 두개의 좌표가 필요합니다.(경도, 위도)  
+이번에는 **평면(plane)** 위에 있는 점을 생각해 봅시다.  
+역시 마찬가지로 두개의 좌표(x,y)로 점의 위치를 표현할 수 있습니다.  
+<br>
+
+구의 표면과 평면은 모두 2차원 C-space이지만 두 공간의 **모습**은 다르다는걸 알고 계실겁니다.  
+여기서 공간의 모습이 다르다는 말은 서로 **위상동형(Topologically equivalent)이 아니다**라는 뜻입니다.  
+구와 럭비공처럼 자르거나 붙이지 않고 부드럽게 구부리고 늘이는 것으로 다른 형태를 만들 수 있으면 위상동형(Topologically equivalent)이라고 할 수 있습니다.  
+<br>
+
+위상적으로 구분되는(Topologically distinct) 1차원 공간으로는 원, 직선, 닫힌 구간의 선분이 있습니다.  
+원은 S 또는 S<sup>1</sup>라고 표기하며 1차원의 구(Sphere)라는 뜻입니다.  
+직선은 E 또는 E<sup>1</sup>라고 표기하며 1차원의 유클리드 공간(Euclidean space)라는 뜻입니다.  
+보통 직선의 점은 실수(Real number)로 표현되기에 R 또는 R<sup>1</sup>으로 대신 표기하기도 합니다.  
+<br>
+
+높은 차원에서 R<sup>n</sup>은 n차원 유클리드 공간이고 S<sup>n</sup>은 n+1차원에 있는 구의 n차원 공간이라고 할 수 있습니다.  
+S<sup>2</sup>는 3차원에 존재하는 구의 2차원 표면인 것처럼요.  
+<br>
+
+여기서 알아야 할 중요한 점은 **공간의 위상(Topology of Space)** 은 공간 위에 있는 점을 어떻게 표현하는가와 관련없는 **근본적인 속성(fundamental property)** 이라는 것입니다.  
+<br>
+
+예를 들어 원(circle) 위의 점을 표현할 때 원 중심과 기준점으로부터의 각 θ를 사용할 수도 있지만 좌표축을 정해 _x<sup>2</sup>+y<sup>2</sup>=1_ 을 만족하는 (_x,y_)좌표를 사용할 수도 있습니다.  
+하지만 어떻게 표현을 하던지간에 원의 모양은(공간은) 변하지 않습니다.  
+<br>
+
+어떤 C-space는 두개 이상의 낮은 차원의 [**데카르트 곱(Cartesian product)**](https://en.wikipedia.org/wiki/Cartesian_product) 으로 표현이 가능합니다.  
+
+예를 들어  
+ - 평면에 존재하는 강체(rigid body)의 C-space는 R<sup>2</sup> × S<sup>1</sup>으로 표현이 가능합니다.  
+ 여기서 R<sup>2</sup>는 위치 정보인 (x,y)좌표의 공간, S<sup>1</sup>은 각 θ의 공간을 뜻합니다. (Figure 2.2 (b) 참고)  
+
+ - 2R 로봇의 C-space는 S<sup>1</sup> × S<sup>1</sup> = T<sup>2</sup>.  
+ > T<sup>n</sup> 은 n+1차원 공간에 존재하는 도넛(Torus)모양의 n차원 표면입니다. 구(Sphere)와 도넛(Torus)은 위상동형(Topologically equivalent)아니기 때문에   
+ > S<sup>1</sup> × S<sup>1</sup> = S<sup>2</sup> 가 아니라 T<sup>2</sup> 이 됩니다.  
+
+ - 2R 로봇 팔을 단 평면 상의 강체의 C-space는 R<sup>2</sup> × S<sup>1</sup> × T<sup>2</sup> = R<sup>2</sup> × T<sup>3</sup>.
+
+ - 3차원 공간에서 강체의 C-space는 dof를 구했을 때를 참고하면 (x,y,z)좌표의 R<sup>3</sup>, 구 표면 위치인 S<sup>2</sup>, 윈 위의 위치인 S<sup>1</sup> 을 종합하면 됩니다.  
+ 따라서 3차원 공간에서 강체의 C-space는 R<sup>2</sup> × S<sup>2</sup> × S<sup>1</sup>.  
+<br>
+
+## 2.3.2 Configuration Space Represenntation  
+계산을 하기 위해선 공간의 **수치표현(numerical representation)** 이 필요합니다.  
+
+> 공간을 수치로 표현할 때 기준 좌표축은 어떻게 설정할 것인지, 길이의 단위는 뭘로 할 것인지 등의 **선택**이 들어가기 때문에 표현된 수치는 공간의 Topology만큼 **근본적**이지 않습니다.  
+
+<br>
+
+![Table 2.2](/assets/images/MR Table 2.2.png)  
+<br>
+
+공간을 표현하는 방법으로는 **explicit parameterization**과 **implicit parameterization**이 있습니다.  
+
+- explicit parameterization은 n차원의 공간을 표현할 때 n개의 parameter를 사용하는 방법입니다.  
+예를 들어 구 표면을 표현하기 위해 경도, 위도 2개의 값을 사용하는 방식이 이에 해당합니다.  
+이 방식은 최소한의 숫자로 공간을 표현할 수 있다는 장점이 있지만, 북극점이나 남극점에서는 조금만 움직여도 경도가 아주 크게 변해버리는 **특이점(singularity)** 이 존재한다는 단점이 있습니다.  
+
+- implicit parameterization은 n차원의 공간을 표현할 때 n+1개의 parameter를 사용하는 방법입니다.  
+구 표면을 표현하기 위해 3차원 좌표(x,y,z)를 사용하는 방식이 이에 해당합니다.  
+이 방식은 특이점이 없다는 장점이 있지만 parameter가 많아진다는 단점을 갖고 있습니다.  
+

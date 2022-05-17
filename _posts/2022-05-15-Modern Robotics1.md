@@ -22,4 +22,7 @@ Course의 순서는 다음과 같습니다.
     - Modern Robotics, Course 4: Robot Motion Planning and Control  
     - Modern Robotics, Course 5: Robot Manipulation and Wheeled Mobile Robots  
     - Modern Robotics, Course 6: Capstone Project, Mobile Manipulation  
+<br>
+
+> 참고 : [링크](http://hades.mech.northwestern.edu/index.php/Modern_Robotics)에서 교과서, 강의자료 등을 볼 수 있습니다.  
     
