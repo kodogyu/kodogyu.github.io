@@ -159,7 +159,7 @@ S<sup>2</sup>는 3차원에 존재하는 구의 2차원 표면인 것처럼요.
  따라서 3차원 공간에서 강체의 C-space는 R<sup>2</sup> × S<sup>2</sup> × S<sup>1</sup>.  
 <br>
 
-## 2.3.2 Configuration Space Represenntation  
+## 2.3.2 Configuration Space Representation  
 계산을 하기 위해선 공간의 **수치표현(numerical representation)** 이 필요합니다.  
 
 > 공간을 수치로 표현할 때 기준 좌표축은 어떻게 설정할 것인지, 길이의 단위는 뭘로 할 것인지 등의 **선택**이 들어가기 때문에 표현된 수치는 공간의 Topology만큼 **근본적**이지 않습니다.  
@@ -178,4 +178,108 @@ S<sup>2</sup>는 3차원에 존재하는 구의 2차원 표면인 것처럼요.
 - implicit parameterization은 n차원의 공간을 표현할 때 n+1개의 parameter를 사용하는 방법입니다.  
 구 표면을 표현하기 위해 3차원 좌표(x,y,z)를 사용하는 방식이 이에 해당합니다.  
 이 방식은 특이점이 없다는 장점이 있지만 parameter가 많아진다는 단점을 갖고 있습니다.  
+<br>
+
+---
+
+# 2.4 Configuration and velocity constraints 
+<br>
+
+closed-loops를 가진 로봇들은 **implicit한 표현**을 explicit한 표현보다 쉽게 얻을 수 있습니다.  
+<br>
+
+![MR Figure 2.10](/assets/images/MR Figure 2.10.png)  
+<br>
+
+Figure 2.10에서 다음 3개의 방정식을 쓸 수 있습니다.  
+![MR 수식 2](/assets/images/MR 수식 2.png)  
+<br>
+
+①은 link의 위치에 관한 식입니다.  
+ - L<sub>1</sub>에서  L<sub>2</sub>,  L<sub>3</sub>, L<sub>4</sub>를 거쳤을 때 원점에 도달함을 나타낸 식입니다.  
+
+②는 L<sub>4</sub>의 방향에 관한 식입니다.  
+ -  L<sub>4</sub>의 가리키는 방향이  L<sub>1</sub>의 시작지점과 일치함을 나타낸 식입니다.  
+
+③은 closed-loop에 관한 식입니다.  
+<br>
+
+이러한 방정식을 **_loop-closure equation_** 이라고 합니다.  
+<br>
+
+한개 이상의 closed-loop를 갖는 일반적인 로봇이 C-space는 implicit하게 열벡터 θ = [θ<sub>1</sub>, θ<sub>2</sub>, ···, θ<sub>4</sub>]<sup>T</sup> 로 표현됩니다.  
+이 로봇은 다음의 loop-closure equation을 갖습니다.  
+![MR 수식 2.5](/assets/images/MR 수식 2.5.png)  
+(각 식은 서로 독립이고, k ≤ n)  
+<br>
+
+로봇이 움직일때를 살펴봅시다.   
+![MR 수식 2.6](/assets/images/MR 수식 2.6.png)  
+<br>
+
+g(θ) = 0  을 시간에 대해 미분하면 (식 2.6)을 얻을 수 있습니다.  
+마지막 식은 이를 행렬의 곱의 형태로 나타낸 것입니다.  
+<br>
+
+이 식을 다시 (식 2.7)처럼 쓸 수 있고, (식 2.8)의 형태는 **Pfaffian constraints form**이라고 합니다.  
+![MR 수식 2.7, 2.8](/assets/images/MR 수식 2.7, 2.8.png)  
+<br>
+
+(식 2.5)는 로봇의 C-space를 제한하는(=위치에 대한 제약) constraint라서 C-space의 차원을 낮춥니다.  
+이러한 constraint를 **holonomic constraint**라고 합니다.  
+<br>
+
+(식 2.7, 2.8)에서 g(θ)는 A(θ)를 적분해 얻을 수 있습니다.  
+따라서 g(θ) = 0 형태의 holonomic constraints는 **integrable constraint**라고 합니다.  
+<br>
+
+(식 2.7)은 로봇이 움직일 때에 관한 식이므로 로봇의 **속도의 제약(velocity constraint)** 에 관한 식입니다.  
+<br>
+
+![Figure 2.11](/assets/images/MR Figure 2.11.png)  
+Figure 2.11에서  
+동전의 반지름 = r  
+동전이 평면과 만나는 지점 : (x, y)  
+동전이 구른(회전한) 정도 : _θ_  
+동전이 굴러가는 방향(steering angle) : _Φ_  
+<br>
+
+위의 조건들로 인해 동전의 속도는 다음 방정식들을 만족해야 합니다.  
+![MR 수식 2.9](/assets/images/MR 수식 2.9.png)  
+(좌변 행렬의 항은 각각 x, y의 속도)  
+<br>
+
+벡터 q를 사용하면 (식 2.10)을 얻을 수 있습니다.  
+![MR 수식 2.10](/assets/images/MR 수식 2.10.png)  
+<br>
+
+이 식을 pfaffian form으로 쓰면 다음처럼 쓸 수 있습니다.  
+![MR 수식 2.10-1](/assets/images/MR 수식  2.10-1.png)  
+<br>
+
+(식 2.10)은 적분이 불가능합니다.  
+이러한 constraint를 **nonintegrable**하다고 하고, nonintegrable constraint를 **nonholonomic constraint**라고 합니다.  
+<br>
+
+ > 이러한 constraint (nonholonomic constraint)는 **속도**에 대한 제약이기에 속도에 대한 차원을 낮추지만 C-space의 차원을 낮추진 않는다. (Such constraints reduce the dimension of the feasible velocities of the system but do not reduce the dimension of the reachable C-space)  
+
+<br>
+
+---
+
+# 2.5 Task Space and Workspace  
+<br>
+
+-**Task Space** : 로봇과 관계없이 Task를 수행할 수 있는 공간.  
+ - 종이에 점을 찍는 작업의 Task Space는 R<sup>2</sup>  
+<br>
+
+-**Work Space** : 로봇의 작용점(end-effector)이 미칠 수 있는(닿을 수 있는) 공간.  
+ - 로봇의 작업(task)에 관련없이 로봇의 구조와 관련있다.  
+<br>
+
+![Figure 2.12](/assets/images/MR Figure 2.12.png)  
+다양한 로봇의 workspace.
+<br>
+
 
