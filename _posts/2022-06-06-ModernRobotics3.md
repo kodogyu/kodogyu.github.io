@@ -1,5 +1,5 @@
 ---
-title: Modern Robotics, Course1 | Chapter 3
+title: Modern Robotics, Course1 / Chapter 3
 subtitle: Modern Robotics Chapter 3 - Rigid-Body Motions
 toc: true
 toc_label: "내용 목차"
@@ -134,4 +134,4 @@ $$
 
 Figure 3.5의 움직임은 강체가 ①만큼 회전하고 ②만큼 평행운동 한 것으로 해석이 가능하지만, 다르게 보면 단순히 점 $s$를 기준으로 $\beta$만큼 회전 한 것으로도 볼 수 있습니다.  
 이것은 하나의 평면 **나사 운동(screw motion)** 예시입니다.  
-이 움직임은 세개의 변수 $(\beta, s_x, s_y)$로 표현될 수 있습니다.
+이 움직임은 세개의 변수 $(\beta, s_x, s_y)$로 표현c될 수 있습니다.

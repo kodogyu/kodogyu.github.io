@@ -1,5 +1,5 @@
 ---
-title: Modern Robotics, Course1 | Chapter 2
+title: Modern Robotics, Course1 / Chapter 2
 subtitle: Modern Robotics Chapter 2 - Configuration Space
 toc: true
 toc_label: "내용 목차"
