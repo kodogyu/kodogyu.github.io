@@ -111,6 +111,7 @@ defaults:
       comments: true
       share: true
       related: true
+      mathjax: true
       sidebar:
         nav: "docs"
   # _pages
