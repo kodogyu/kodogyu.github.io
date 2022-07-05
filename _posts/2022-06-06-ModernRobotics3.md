@@ -209,6 +209,7 @@ R = \begin{bmatrix}
 \end{bmatrix}
 \end{aligned}
 $$  
+
 <br>
 
 ### 3.2.1.1 Properties of Rotation Matrices(회전 행렬의 성질)  
@@ -253,31 +254,37 @@ R_c = \begin{bmatrix}
 \end{bmatrix}.
 \end{aligned}
 $$  
+
 각 frame에서 p의 좌표는 다음과 같습니다.  
+
 $$
 \begin{aligned}
 p_a = \begin{bmatrix}
     1 \\
     1 \\
     0 
-\end{bmatrix},
+\end{bmatrix}
+,
 p_b = \begin{bmatrix}
     1 \\
     -1 \\
     0 
-\end{bmatrix},
+\end{bmatrix}
+,
 p_c = \begin{bmatrix}
     0 \\
     -1 \\
     -1 
-\end{bmatrix}.
+\end{bmatrix}
+.
 \end{aligned}
 $$  
 <br>
 
 **1. Representing an orientation(방향의 표현)**  
  암묵적으로 $R_c$는 frame $\lbrace s \rbrace$에 대한 $\lbrace c \rbrace$의 방향입니다. 이를 좀 더 명시적으로 쓰면 $R_{sc}$로 쓸 수 있고 이 또한 동일한 뜻을 의미합니다. 이러한 방식은 어떤 한 frame을 $\lbrace s \rbrace$가 아닌 다른 frame에 대해 표현할 때 용이합니다. 예를 들어 $R_{bc}$는 $\lbrace b \rbrace$에 대한 $\lbrace c \rbrace$의 방향을 뜻합니다. frame에 대해 혼동할 여지가 없으면 단순히 $R$로 쓰기도 합니다.  
-Figure 3.7에서 다음을 알 수 있습니다.   
+Figure 3.7에서 다음을 알 수 있습니다.  
+
 $$
 \begin{aligned}
 R_{ac} = \begin{bmatrix}
@@ -300,6 +307,7 @@ $$
 $$
 R_{de} = R_{ed}^{-1} = R_{ed}^{T}
 $$  
+
 <br>
 
 **2. Changing the reference frame(기준 frame의 변환)**  
@@ -308,6 +316,7 @@ $$
 $$
 R_{ac} = R_{ab}R_{bc}
 $$  
+
 위 식에서 $R_{bc}$는 $\lbrace c \rbrace$의 방향을 나타내는 것으로, $R_{ab}$는 기준 frame을 $\lbrace b \rbrace$에서 $\lbrace a \rbrace$로 바꾸는 연산자(operator)로 볼 수 있습니다.  
 첫 번째 행렬의 두번째 아래첨자와 두 번째 행렬의 첫번째 아래첨자(위 예시에서는 'b')가 같으면 reference frame의 변환이 가능하다고 생각하면 기억하기 편리합니다.  
 <br>
