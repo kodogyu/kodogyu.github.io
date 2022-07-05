@@ -14,12 +14,12 @@ tags: [study, robotics]
 <br>
 
 Figure 3.3에서 평면 몸체(회색 부분)를 봐봅시다.  
-그림에서처럼 단위축 $\hat{x}_s,\, \hat{y}_s$를 갖는 고정된 기준틀(reference frame) $\{s\}$이 있을 때 비슷하게 단위축 $\hat{x}_b,\, \hat{y}_b$를 갖는 평면몸체의 기준틀을 지정할 수 있습니다.(책에서 hat표기는 단위벡터를 의미합니다.)  
-그 틀을 body frame이라 하고 $\{b\}$로 표기합니다.  
+그림에서처럼 단위축 $\hat{x}_s,\, \hat{y}_s$를 갖는 고정된 기준틀(reference frame) $\lbrace s \rbrace$이 있을 때 비슷하게 단위축 $\hat{x}_b,\, \hat{y}_b$를 갖는 평면몸체의 기준틀을 지정할 수 있습니다.(책에서 hat표기는 단위벡터를 의미합니다.)  
+그 틀을 body frame이라 하고 $\lbrace b \rbrace$로 표기합니다.  
 <br>
 
 평면 몸체의 **위치(position)** 를 설명하기 위해서는 고정된 기준틀(fixed frame)에 대한 몸체의 위치(position)와 방향(orientation)만으로 충분합니다.  
-Figure 3.3에서 $\{b\}$의 원점인 $p$는 $\{s\}$의 좌표축을 이용해 다음과 같이 쓸 수 있습니다.  
+Figure 3.3에서 $\lbrace b \rbrace$의 원점인 $p$는 $\lbrace s \rbrace$의 좌표축을 이용해 다음과 같이 쓸 수 있습니다.  
 
 $$
 p = p_x \hat{x}_s\, +\, p_y \hat{y}_s 
@@ -31,8 +31,8 @@ $$
 따라서 식 3.1과 같이 표기해 $(p_x,p_y)$가 어떤 기준틀에서 정의되었는지 확실하게 명시할 수 있습니다.  
 <br>
 
-다음으로 고정된 frame $\{s\}$에 대한 몸체의 frame $\{b\}$의 **방향(orientation)** 은 Figure 3.3에서 각 $\theta$를 통해 설명할 수 있습니다.  
-$\{b\}$의 단위 벡터 $\hat{x}_b ,\, \hat{y}_b$를 $\{s\}$의 그것들로 표현하면 다음과 같습니다.  
+다음으로 고정된 frame $\lbrace s \rbrace$에 대한 몸체의 frame $\lbrace b \rbrace$의 **방향(orientation)** 은 Figure 3.3에서 각 $\theta$를 통해 설명할 수 있습니다.  
+$\lbrace b \rbrace$의 단위 벡터 $\hat{x}_b ,\, \hat{y}_b$를 $\lbrace s \rbrace$의 그것들로 표현하면 다음과 같습니다.  
 
 $$
 \begin{aligned}
@@ -41,7 +41,7 @@ $$
 \end{aligned}
 $$  
 
-$p$의 모든 성분을 $\{s\}$에 대해 쓰기로 하면 열벡터 $p \in \R^2$는  
+$p$의 모든 성분을 $\lbrace s \rbrace$에 대해 쓰기로 하면 열벡터 $p \in \R^2$는  
 
 $$
 p = \begin{bmatrix} p_x \\ p_y \end{bmatrix}
@@ -55,14 +55,14 @@ $$
 <br>
 
 행렬 $P$는 **회전 행렬(rotation matrix)** 의 한 예시입니다.  
-순서쌍 $(P,p)$는 $\{s\}$에 대한 $\{b\}$의 방향과 위치에 대한 정보입니다.  
+순서쌍 $(P,p)$는 $\lbrace s \rbrace$에 대한 $\lbrace b \rbrace$의 방향과 위치에 대한 정보입니다.  
 <br>
 
 ![Figure 3.4](/assets/images/MR Figure 3.4.png)  
 <br>
 
 Figure 3.4에 있는 3개의 frame을 봅시다.  
-위의 방식을 똑같이 적용하면 다음과 같은 $\{s\}$에 대한 $\{c\}$의 정보인 순서쌍 $(R,r)$을 얻을 수 있습니다.
+위의 방식을 똑같이 적용하면 다음과 같은 $\lbrace s \rbrace$에 대한 $\lbrace c \rbrace$의 정보인 순서쌍 $(R,r)$을 얻을 수 있습니다.
 
 $$
 r = \begin{bmatrix}
@@ -76,8 +76,8 @@ R = \begin{bmatrix}
 \end{bmatrix}
 $$
 
-또 frame $\{c\}$를 $\{b\}$에 대해 쓸 수 있습니다.  
-$q$를 $\{b\}$의 좌표로 표현된 $\{b\}$의 원점으로부터 $\{c\}$의 원점까지의 벡터라 하고, $Q$를 $\{b\}$에 대한 $\{c\}$의 방향(orientation)이라 하면 다음과 같은 순서쌍 $(Q,q)$를 얻을 수 있습니다.  
+또 frame $\lbrace c \rbrace$를 $\lbrace b \rbrace$에 대해 쓸 수 있습니다.  
+$q$를 $\lbrace b \rbrace$의 좌표로 표현된 $\lbrace b \rbrace$의 원점으로부터 $\lbrace c \rbrace$의 원점까지의 벡터라 하고, $Q$를 $\lbrace b \rbrace$에 대한 $\lbrace c \rbrace$의 방향(orientation)이라 하면 다음과 같은 순서쌍 $(Q,q)$를 얻을 수 있습니다.  
 
 $$
 q = \begin{bmatrix}
@@ -91,7 +91,7 @@ Q = \begin{bmatrix}
 \end{bmatrix}
 $$
 
-$(Q,q)$ ($\{b\}$에 대한 $\{c\}$의 위치)와 $(P,p)$ ($\{s\}$에 대한 $\{b\}$의 위치)를 알고 있다면, 다음과 같이 $\{s\}$에 대한 $\{c\}$의 위치를 계산해낼 수 있습니다.  
+$(Q,q)$ ($\lbrace b \rbrace$에 대한 $\lbrace c \rbrace$의 위치)와 $(P,p)$ ($\lbrace s \rbrace$에 대한 $\lbrace b \rbrace$의 위치)를 알고 있다면, 다음과 같이 $\lbrace s \rbrace$에 대한 $\lbrace c \rbrace$의 위치를 계산해낼 수 있습니다.  
 
 $$
 R = PQ \tag{3.8}
@@ -99,22 +99,22 @@ $$
 $$
 r = Pq + p \tag{3.9}
 $$
-식(3.8)은 $Q$를 $\{s\}$ frame에 대한 것으로 변환한 것이고,  
-식(3.9)는 $q$를 $\{s\}$ frame에 대해 변환하고 $p$와 벡터합 한 것입니다.  
+식(3.8)은 $Q$를 $\lbrace s \rbrace$ frame에 대한 것으로 변환한 것이고,  
+식(3.9)는 $q$를 $\lbrace s \rbrace$ frame에 대해 변환하고 $p$와 벡터합 한 것입니다.  
 <br>
 
 ![Figure 3.5](/assets/images/MR Figure 3.5.png)  
 <br>
 
-두개의 frame $\{d\}, \{c\}$이 붙어있는 강체(rigid body)에 대해 생각해봅시다.  
-$\{d\}$는 초기에 $\{s\}$와 동일한 위치에 있고, $\{c\}$는 $\{s\}$에 대해 $(R,r)$로 표현됩니다.  
+두개의 frame $\lbrace d \rbrace, \lbrace c \rbrace$이 붙어있는 강체(rigid body)에 대해 생각해봅시다.  
+$\lbrace d \rbrace$는 초기에 $\lbrace s \rbrace$와 동일한 위치에 있고, $\lbrace c \rbrace$는 $\lbrace s \rbrace$에 대해 $(R,r)$로 표현됩니다.  
 <br>
 
-그리고 몸체가 움직여 $\{d\}$는 $\{d'\}$으로 움직여 $\{b\}$ ($\{s\}$에 대해 $(P,p)$로 표현)와 일치하게 되었습니다.  
-이런 움직임 이후에 $\{c\}$는 어디로 위치하게 될지 알아봅시다.  
+그리고 몸체가 움직여 $\lbrace d \rbrace$는 $\lbrace d' \rbrace$으로 움직여 $\lbrace b \rbrace$ ($\lbrace s \rbrace$에 대해 $(P,p)$로 표현)와 일치하게 되었습니다.  
+이런 움직임 이후에 $\lbrace c \rbrace$는 어디로 위치하게 될지 알아봅시다.  
 <br>
 
-$\{c\}$의 도착 위치를 $\{c'\}$라 하고 이 frame의 위치를 $(R',r')$이라고 하면
+$\lbrace c \rbrace$의 도착 위치를 $\lbrace c' \rbrace$라 하고 이 frame의 위치를 $(R',r')$이라고 하면
 
 $$
 R' = PR \tag{3.10}
@@ -182,26 +182,29 @@ $$
 <br>
 
 이상의 두 식을 다음과 같이 쓸 수 있습니다.  
+
 $$ R^{T}R = I $$  
+
 또 frame은 오른손 법칙을 따르기 때문에 (i.e., $\hat{x}_b \times \hat{y}_b = \hat{z}_b$) 행렬식(determinant)를 이용해 해당 constraint를 추가할 수 있습니다.  
+
 $$ 
 det R = {\hat{x}_b}^{T}(\hat{y}_b \times \hat{z}_b) = {\hat{z}_b}^{T}(\hat{x}_b \times \hat{y}_b) = {\hat{y}_b}^{T}(\hat{z}_b \times \hat{x}_b) = 1.
 $$  
 
 3 $\times$ 3 회전 행렬은 **special orthogonal group** _SO_(3)의 형태입니다.  
-_SO_(3)를 (i) $R^{T}R=I$ 와 (ii) det$R = 1$ 을 만족하는 3 $\times$ 3 실수 회전 행렬을 뜻합니다.  
+_SO_(3)는 (i) $R^{T}R=I$ 와 (ii) det$R = 1$ 을 만족하는 3 $\times$ 3 실수 회전 행렬을 뜻합니다.  
 추가로 _SO_(2)는 (i) $R^{T}R=I$ 와 (ii) det$R = 1$ 을 만족하는 2 $\times$ 2 실수 회전 행렬로 정의에 의해 다음과 같이 쓸 수 있습니다.  
 
 $$
 R = \begin{bmatrix}
-r_{11} & r_{12}
-\\
-r_{21} & r_{22}
+    r_{11} & r_{12}
+    \\
+    r_{21} & r_{22}
 \end{bmatrix} = 
 \begin{bmatrix}
-cos\theta & -sin\theta
-\\
-sin\theta & cos\theta
+    cos\theta & -sin\theta
+    \\
+    sin\theta & cos\theta
 \end{bmatrix}
 $$  
 <br>
@@ -228,43 +231,44 @@ $$
 
 Figure 3.7은 동일한 지점에 있는 점 p와 각기 다른 3개의 frame을 보여줍니다. fixed space frame $\lbrace s \rbrace$는 $\lbrace a \rbrace$와 동일합니다.  
 $\lbrace s \rbrace$에 대한 각 frame들의 방향은 다음과 같습니다.  
+
 $$
 R_a = \begin{bmatrix}
-1 & 0 & 0 \\
-0 & 1 & 0 \\
-0 & 0 & 1
+    1 & 0 & 0 \\
+    0 & 1 & 0 \\
+    0 & 0 & 1
 \end{bmatrix},
 
 R_b = \begin{bmatrix}
-0 & -1 & 0 \\
-1 & 0 & 0 \\
-0 & 0 & 1
+    0 & -1 & 0 \\
+    1 & 0 & 0 \\
+    0 & 0 & 1
 \end{bmatrix},
 
 R_c = \begin{bmatrix}
-0 & -1 & 0 \\
-0 & 0 & -1 \\
-1 & 0 & 0
+    0 & -1 & 0 \\
+    0 & 0 & -1 \\
+    1 & 0 & 0
 \end{bmatrix}.
 $$  
 각 frame에서 p의 좌표는 다음과 같습니다.  
 $$
 p_a = \begin{bmatrix}
-1 \\
-1 \\
-0 
+    1 \\
+    1 \\
+    0 
 \end{bmatrix},
 
 p_b = \begin{bmatrix}
-1 \\
--1 \\
-0 
+    1 \\
+    -1 \\
+    0 
 \end{bmatrix},
 
 p_c = \begin{bmatrix}
-0 \\
--1 \\
--1 
+    0 \\
+    -1 \\
+    -1 
 \end{bmatrix}.
 $$  
 <br>
@@ -274,15 +278,15 @@ $$
 Figure 3.7에서 다음을 알 수 있습니다.   
 $$
 R_{ac} = \begin{bmatrix}
-0 & -1 & 0 \\
-0 & 0 & -1 \\
-1 & 0 & 0
-\end{bmatrix},\qquad
-
+    0 & -1 & 0 \\
+    0 & 0 & -1 \\
+    1 & 0 & 0
+\end{bmatrix},
+\qquad
 R_{ca} = \begin{bmatrix}
-0 & 0 & 1 \\
--1 & 0 & 0 \\
-0 & -1 & 0
+    0 & 0 & 1 \\
+    -1 & 0 & 0 \\
+    0 & -1 & 0
 \end{bmatrix}.
 $$  
 단순 계산을 통해 $R_{ac}R_{ca} = I$임을 알 수 있고 따라서 $R_{ac} = R_{ca}^{-1}$ 입니다. 또는 회전 행렬의 첫번째 성질을 통해 $R_{ac} = {R_{ca}}^{T}$임을 알 수 있습니다.  
