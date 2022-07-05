@@ -154,4 +154,158 @@ $S$를 따라 $\theta \over 2$만큼 이동하면 최종 지점에 도달합니�
 # 3.2 Rotations and Angular Velocities  
 <br>
 
-## 3.2.1 Rotation Matrices (회전 행렬)
+## 3.2.1 Rotation Matrices (회전 행렬)  
+회전 행렬 $R$의 열들은 각각 body-frame의 단위 축(unit axes) $\lbrace\hat{x}_b,\hat{y}_b,\hat{z}_b\rbrace$입니다.  
+따라서 다음이 성립합니다.  
+<br>
+
+(a) $\hat{x}_b,\hat{y}_b,\hat{z}_b$가 모두 단위벡터 이므로
+$$
+r_{11}^2 + r_{21}^2 + r_{31}^2 = 1
+\\
+r_{12}^2 + r_{22}^2 + r_{32}^2 = 1,
+\\
+r_{13}^2 + r_{23}^2 + r_{33}^2 = 1.
+\tag{3.17}
+$$
+<br>
+
+(b) 각 벡터의 내적이 0 이므로 ($\hat{x}_b \cdot \hat{y}_b = \hat{x}_b \cdot \hat{z}_b = \hat{y}_b \cdot \hat{z}_b = 0$)  
+$$
+r_{11}r_{12} + r_{21}r_{22} + r_{31}r_{32} = 0,
+\\
+r_{12}r_{13} + r_{22}r_{23} + r_{32}r_{33} = 0,
+\\
+r_{11}r_{13} + r_{21}r_{23} + r_{31}r_{33} = 0.
+\tag{3.18}
+$$
+<br>
+
+이상의 두 식을 다음과 같이 쓸 수 있습니다.  
+$$ R^{T}R = I $$  
+또 frame은 오른손 법칙을 따르기 때문에 (i.e., $\hat{x}_b \times \hat{y}_b = \hat{z}_b$) 행렬식(determinant)를 이용해 해당 constraint를 추가할 수 있습니다.  
+$$ 
+det\,R = {\hat{x}_b}^{T}(\hat{y}_b \times \hat{z}_b) = {\hat{z}_b}^{T}(\hat{x}_b \times \hat{y}_b) = {\hat{y}_b}^{T}(\hat{z}_b \times \hat{x}_b) = 1.
+$$  
+3 $\times$ 3 회전 행렬은 **special orthogonal group** _SO_(3)의 형태입니다.  
+_SO_(3)를 (i) $R^{T}R=I$ 와 (ii) det$R = 1$ 을 만족하는 3 $\times$ 3 실수 회전 행렬을 뜻합니다.  
+추가로 _SO_(2)는 (i) $R^{T}R=I$ 와 (ii) det$R = 1$ 을 만족하는 2 $\times$ 2 실수 회전 행렬로 정의에 의해 다음과 같이 쓸 수 있습니다.  
+
+$$
+R = \begin{bmatrix}
+r_{11} & r_{12}
+\\
+r_{21} & r_{22}
+\end{bmatrix} = 
+\begin{bmatrix}
+cos\theta & -sin\theta
+\\
+sin\theta & cos\theta
+\end{bmatrix}
+$$  
+<br>
+
+### 3.2.1.1 Properties of Rotation Matrices(회전 행렬의 성질)  
+회전행렬은 다음과 같은 성질을 갖습니다.  
+- 회전 행렬의 역행렬은 본래의 전치행렬과 같다. ($R^{-1} = R^{T}$)
+- 두 회전 행렬의 곱은 회전 행렬이다. ($R_1,\, R_2 \in SO(3),\, R_1R_2 \in SO(3)$)
+- 회전 행렬의 곱은 교환 법칙이 성립한다. ($(R_1 R_2)R_3 = R_1 (R_2 R_3)$)
+<br>
+
+### 3.2.1.2 Uses of Rotation Matrices(회전 행렬의 사용)  
+식 (3.10), (3.11)에서 본 것 같이 회전 행렬 $R$은 보통 다음 3가지의 의미로 사용합니다.  
+ 1. 방향을 표현하기 위해
+ 2. 벡터나 frame이 표현된 reference frame(기준 frame)을 바꾸기 위해
+ 3. 벡터나 frame을 회전시키기 위해
+<br>
+
+첫번째처럼 쓰인다면 $R$은 frame을 표현하는 것으로 여겨지고, 두번째와 세번째처럼 쓰인다면 $R$은 벡터나 frame에 작용하는 연산자로 여겨집니다.  
+<br>
+
+![MR Figure 3.7](/assets/images/MR Figure 3.7.png)  
+<br>
+
+Figure 3.7은 동일한 지점에 있는 점 p와 각기 다른 3개의 frame을 보여줍니다. fixed space frame $\lbrace s \rbrace$는 $\lbrace a \rbrace$와 동일합니다.  
+$\lbrace s \rbrace$에 대한 각 frame들의 방향은 다음과 같습니다.  
+$$
+R_a = \begin{bmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1
+\end{bmatrix},\;
+
+R_b = \begin{bmatrix}
+0 & -1 & 0 \\
+1 & 0 & 0 \\
+0 & 0 & 1
+\end{bmatrix},\;
+
+R_c = \begin{bmatrix}
+0 & -1 & 0 \\
+0 & 0 & -1 \\
+1 & 0 & 0
+\end{bmatrix}.
+$$  
+각 frame에서 p의 좌표는 다음과 같습니다.  
+$$
+p_a = \begin{bmatrix}
+1 \\
+1 \\
+0 
+\end{bmatrix},\;
+
+p_b = \begin{bmatrix}
+1 \\
+-1 \\
+0 
+\end{bmatrix},\;
+
+p_c = \begin{bmatrix}
+0 \\
+-1 \\
+-1 
+\end{bmatrix}.
+$$  
+<br>
+
+**1. Representing an orientation(방향의 표현)**  
+ 암묵적으로 $R_c$는 frame $\lbrace s \rbrace$에 대한 $\lbrace c \rbrace$의 방향입니다. 이를 좀 더 명시적으로 쓰면 $R_{sc}$로 쓸 수 있고 이 또한 동일한 뜻을 의미합니다. 이러한 방식은 어떤 한 frame을 $\lbrace s \rbrace$가 아닌 다른 frame에 대해 표현할 때 용이합니다. 예를 들어 $R_{bc}$는 $\lbrace b \rbrace$에 대한 $\lbrace c \rbrace$의 방향을 뜻합니다. frame에 대해 혼동할 여지가 없으면 단순히 $R$로 쓰기도 합니다.  
+Figure 3.7에서 다음을 알 수 있습니다.   
+$$
+R_{ac} = \begin{bmatrix}
+0 & -1 & 0 \\
+0 & 0 & -1 \\
+1 & 0 & 0
+\end{bmatrix},\qquad
+
+R_{ca} = \begin{bmatrix}
+0 & 0 & 1 \\
+-1 & 0 & 0 \\
+0 & -1 & 0
+\end{bmatrix}.
+$$  
+단순 계산을 통해 $R_{ac}R_{ca} = I$임을 알 수 있고 따라서 $R_{ac} = R_{ca}^{-1}$ 입니다. 또는 회전 행렬의 첫번째 성질을 통해 $R_{ac} = {R_{ca}}^{T}$임을 알 수 있습니다.  
+두 frame $\lbrace d \rbrace$와 $\lbrace e \rbrace$에 대해 다음이 성립합니다.  
+$$
+R_{de} = R_{ed}^{-1} = R_{ed}^{T}
+$$  
+<br>
+
+**2. Changing the reference frame(기준 frame의 변환)**  
+회전 행렬 $R_{ab}$는 $\lbrace a \rbrace$에 대한 $\lbrace b \rbrace$의 방향을 나타내고, $R_{bc}$는 $\lbrace b \rbrace$에 대한 $\lbrace c \rbrace$의 방향을 나타냅니다. 간단한 계산으로 $\lbrace a \rbrace$에 대한 $\lbrace c \rbrace$의 방향이 다음과 같음을 알 수 있습니다.  
+$$
+R_{ac} = R_{ab}R_{bc}
+$$  
+위 식에서 $R_{bc}$는 $\lbrace c \rbrace$의 방향을 나타내는 것으로, $R_{ab}$는 기준 frame을 $\lbrace b \rbrace$에서 $\lbrace a \rbrace$로 바꾸는 연산자(operator)로 볼 수 있습니다.  
+첫 번째 행렬의 두번째 아래첨자와 두 번째 행렬의 첫번째 아래첨자(위 예시에서는 'b')가 같으면 reference frame의 변환이 가능하다고 생각하면 기억하기 편리합니다.  
+<br>
+
+마찬가지로 $\lbrace b \rbrace$에 대해 표현된 벡터 $p_b$를 $\lbrace a \rbrace$에 대해 표현되도록 할 수 있습니다.  
+$$
+R_{ab}p_b = p_a
+$$
+
+
+**3. Rotating a vector or a frame(벡터나 frame의 회전)**  
+
+
