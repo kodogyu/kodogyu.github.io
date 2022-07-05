@@ -41,7 +41,7 @@ $$
 \end{aligned}
 $$  
 
-$p$의 모든 성분을 $\lbrace s \rbrace$에 대해 쓰기로 하면 열벡터 $p \in \R^2$는  
+$p$의 모든 성분을 $\lbrace s \rbrace$에 대해 쓰기로 하면 열벡터 $p \in \mathbb{R}^2$는  
 
 $$
 p = \begin{bmatrix} p_x \\ p_y \end{bmatrix}
@@ -238,13 +238,11 @@ R_a = \begin{bmatrix}
     0 & 1 & 0 \\
     0 & 0 & 1
 \end{bmatrix},
-
 R_b = \begin{bmatrix}
     0 & -1 & 0 \\
     1 & 0 & 0 \\
     0 & 0 & 1
 \end{bmatrix},
-
 R_c = \begin{bmatrix}
     0 & -1 & 0 \\
     0 & 0 & -1 \\
@@ -258,13 +256,11 @@ p_a = \begin{bmatrix}
     1 \\
     0 
 \end{bmatrix},
-
 p_b = \begin{bmatrix}
     1 \\
     -1 \\
     0 
 \end{bmatrix},
-
 p_c = \begin{bmatrix}
     0 \\
     -1 \\
