@@ -185,8 +185,9 @@ $$
 $$ R^{T}R = I $$  
 또 frame은 오른손 법칙을 따르기 때문에 (i.e., $\hat{x}_b \times \hat{y}_b = \hat{z}_b$) 행렬식(determinant)를 이용해 해당 constraint를 추가할 수 있습니다.  
 $$ 
-det\,R = {\hat{x}_b}^{T}(\hat{y}_b \times \hat{z}_b) = {\hat{z}_b}^{T}(\hat{x}_b \times \hat{y}_b) = {\hat{y}_b}^{T}(\hat{z}_b \times \hat{x}_b) = 1.
+det R = {\hat{x}_b}^{T}(\hat{y}_b \times \hat{z}_b) = {\hat{z}_b}^{T}(\hat{x}_b \times \hat{y}_b) = {\hat{y}_b}^{T}(\hat{z}_b \times \hat{x}_b) = 1.
 $$  
+
 3 $\times$ 3 회전 행렬은 **special orthogonal group** _SO_(3)의 형태입니다.  
 _SO_(3)를 (i) $R^{T}R=I$ 와 (ii) det$R = 1$ 을 만족하는 3 $\times$ 3 실수 회전 행렬을 뜻합니다.  
 추가로 _SO_(2)는 (i) $R^{T}R=I$ 와 (ii) det$R = 1$ 을 만족하는 2 $\times$ 2 실수 회전 행렬로 정의에 의해 다음과 같이 쓸 수 있습니다.  
@@ -232,13 +233,13 @@ R_a = \begin{bmatrix}
 1 & 0 & 0 \\
 0 & 1 & 0 \\
 0 & 0 & 1
-\end{bmatrix},\;
+\end{bmatrix},
 
 R_b = \begin{bmatrix}
 0 & -1 & 0 \\
 1 & 0 & 0 \\
 0 & 0 & 1
-\end{bmatrix},\;
+\end{bmatrix},
 
 R_c = \begin{bmatrix}
 0 & -1 & 0 \\
@@ -252,13 +253,13 @@ p_a = \begin{bmatrix}
 1 \\
 1 \\
 0 
-\end{bmatrix},\;
+\end{bmatrix},
 
 p_b = \begin{bmatrix}
 1 \\
 -1 \\
 0 
-\end{bmatrix},\;
+\end{bmatrix},
 
 p_c = \begin{bmatrix}
 0 \\
