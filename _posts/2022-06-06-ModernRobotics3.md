@@ -196,6 +196,7 @@ _SO_(3)는 (i) $R^{T}R=I$ 와 (ii) det$R = 1$ 을 만족하는 3 $\times$ 3 실�
 추가로 _SO_(2)는 (i) $R^{T}R=I$ 와 (ii) det$R = 1$ 을 만족하는 2 $\times$ 2 실수 회전 행렬로 정의에 의해 다음과 같이 쓸 수 있습니다.  
 
 $$
+\begin{aligned}
 R = \begin{bmatrix}
     r_{11} & r_{12}
     \\
@@ -206,6 +207,7 @@ R = \begin{bmatrix}
     \\
     sin\theta & cos\theta
 \end{bmatrix}
+\end{aligned}
 $$  
 <br>
 
@@ -233,6 +235,7 @@ Figure 3.7은 동일한 지점에 있는 점 p와 각기 다른 3개의 frame을
 $\lbrace s \rbrace$에 대한 각 frame들의 방향은 다음과 같습니다.  
 
 $$
+\begin{aligned}
 R_a = \begin{bmatrix}
     1 & 0 & 0 \\
     0 & 1 & 0 \\
@@ -248,9 +251,11 @@ R_c = \begin{bmatrix}
     0 & 0 & -1 \\
     1 & 0 & 0
 \end{bmatrix}.
+\end{aligned}
 $$  
 각 frame에서 p의 좌표는 다음과 같습니다.  
 $$
+\begin{aligned}
 p_a = \begin{bmatrix}
     1 \\
     1 \\
@@ -266,6 +271,7 @@ p_c = \begin{bmatrix}
     -1 \\
     -1 
 \end{bmatrix}.
+\end{aligned}
 $$  
 <br>
 
@@ -273,6 +279,7 @@ $$
  암묵적으로 $R_c$는 frame $\lbrace s \rbrace$에 대한 $\lbrace c \rbrace$의 방향입니다. 이를 좀 더 명시적으로 쓰면 $R_{sc}$로 쓸 수 있고 이 또한 동일한 뜻을 의미합니다. 이러한 방식은 어떤 한 frame을 $\lbrace s \rbrace$가 아닌 다른 frame에 대해 표현할 때 용이합니다. 예를 들어 $R_{bc}$는 $\lbrace b \rbrace$에 대한 $\lbrace c \rbrace$의 방향을 뜻합니다. frame에 대해 혼동할 여지가 없으면 단순히 $R$로 쓰기도 합니다.  
 Figure 3.7에서 다음을 알 수 있습니다.   
 $$
+\begin{aligned}
 R_{ac} = \begin{bmatrix}
     0 & -1 & 0 \\
     0 & 0 & -1 \\
@@ -284,9 +291,12 @@ R_{ca} = \begin{bmatrix}
     -1 & 0 & 0 \\
     0 & -1 & 0
 \end{bmatrix}.
+\end{aligned}
 $$  
+
 단순 계산을 통해 $R_{ac}R_{ca} = I$임을 알 수 있고 따라서 $R_{ac} = R_{ca}^{-1}$ 입니다. 또는 회전 행렬의 첫번째 성질을 통해 $R_{ac} = {R_{ca}}^{T}$임을 알 수 있습니다.  
 두 frame $\lbrace d \rbrace$와 $\lbrace e \rbrace$에 대해 다음이 성립합니다.  
+
 $$
 R_{de} = R_{ed}^{-1} = R_{ed}^{T}
 $$  
@@ -294,6 +304,7 @@ $$
 
 **2. Changing the reference frame(기준 frame의 변환)**  
 회전 행렬 $R_{ab}$는 $\lbrace a \rbrace$에 대한 $\lbrace b \rbrace$의 방향을 나타내고, $R_{bc}$는 $\lbrace b \rbrace$에 대한 $\lbrace c \rbrace$의 방향을 나타냅니다. 간단한 계산으로 $\lbrace a \rbrace$에 대한 $\lbrace c \rbrace$의 방향이 다음과 같음을 알 수 있습니다.  
+
 $$
 R_{ac} = R_{ab}R_{bc}
 $$  
@@ -302,10 +313,10 @@ $$
 <br>
 
 마찬가지로 $\lbrace b \rbrace$에 대해 표현된 벡터 $p_b$를 $\lbrace a \rbrace$에 대해 표현되도록 할 수 있습니다.  
+
 $$
 R_{ab}p_b = p_a
-$$
-
+$$  
 
 **3. Rotating a vector or a frame(벡터나 frame의 회전)**  
 
