@@ -329,4 +329,24 @@ $$
 
 **3. Rotating a vector or a frame(벡터나 frame의 회전)**  
 
+![MR Figure 3.8](/assets/images/MR Figure 3.8.png)  
+<br>
 
+Figure 3.8에서 진한 부분은 $\lbrace \hat{x}, \hat{y}, \hat{z} \rbrace$을 축으로 하는 frame  $\lbrace c \rbrace$ (=$\lbrace s \rbrace$) 입니다. 여기서 $\lbrace c \rbrace$를 단위축 $\hat{\omega}$를 중심으로 $\theta$만큼 회전하면 회색 부분인 $\lbrace \hat{x}', \hat{y}', \hat{z}' \rbrace$을 축으로 하는 frame  $\lbrace c' \rbrace$을 얻습니다.  
+회전 행렬 $R = R_{sc'}$ 은 $\lbrace s \rbrace$에 대한 $\lbrace c' \rbrace$의 방향이지만 다르게 생각해보면 $\lbrace s \rbrace$을 $\lbrace c' \rbrace$으로 변환하는 역할을 한다고 볼 수 있습니다.  
+방향을 나타내는 것이 아닌 회전 연산자로써 $R$을 다음과 같이 쓸 수 있습니다.  
+$$
+R = Rot(\hat{\omega}, \theta)
+$$  
+<br>
+
+![MR Figure 3.9](/assets/images/MR Figure 3.9.png)  
+<br>
+
+이제 $R_{sb}$가 $\lbrace s \rbrace$에 대한 $\lbrace b \rbrace$의 방향을 나타내고, $\lbrace b \rbrace$를 단위 축 $\hat{\omega}$을 중심으로 $\theta$만큼 회전시킨다고 생각해 봅시다($R = Rot(\hat{\omega}, \theta)$).  
+의미를 정확히 하기 위해 $\hat{\omega}$이 $\lbrace s \rbrace$ 좌표로 표현되었는지 $\lbrace b \rbrace$ 좌표로 표현되었는지 정해야 합니다. $\lbrace s \rbrace$와 $\lbrace b \rbrace$가 일치하지 않는 한, 이 선택에 따라 똑같은 값인 $\hat{\omega}$이라 할지라도 다른 결과를 가져올 수 있습니다.  
+$\lbrace b' \rbrace$을 $\hat{\omega_s}$($\lbrace s \rbrace$에서 표현된 $\hat{\omega}$)에 대해 $\theta$만큼 회전했을 때의 frame이라 하고, $\lbrace b'' \rbrace$을 $\hat{\omega_b}$($\lbrace b \rbrace$에서 표현된 $\hat{\omega}$)에 대해 $\theta$만큼 회전했을 때의 frame이라 하면 새로운 frame들은 다음과 같이 계산할 수 있습니다.  
+![MR 수식 3.23](/assets/images/MR 수식 3.23.png)  
+<br>
+
+다른 말로 하면, $R = Rot(\hat{\omega}, \theta)$을 앞에 곱하면 $\hat{\omega}$이 fixed frame에서 표현된 것임을 뜻하고 뒤에 곱하면 $\hat{\omega}$이 body frame에서 표현된 것임을 뜻합니다.
