@@ -20,4 +20,5 @@ Hi, I’m a M.S. student in [Artificial Intelligence & Robotics Lab](http://airl
 ## Publications
 
 [**GAIA: Generating Task Instruction Aware Simulation Grounded in Real Contexts Using Vision-Language Models**](https://sites.google.com/view/gaia-project-page)  
-**Dogyu Ko†**, [Chanyoung Yeo†](https://yeocy.github.io/), [Daeho Kim](https://sites.google.com/view/daeho-kim/home), Jaeho Kim and [Hyoseok Hwang*](https://sites.google.com/view/hyoseok-hwang)
+**Dogyu Ko†**, [Chanyoung Yeo†](https://yeocy.github.io/), [Daeho Kim](https://sites.google.com/view/daeho-kim/home), Jaeho Kim and [Hyoseok Hwang*](https://sites.google.com/view/hyoseok-hwang)  
+*IEEE Robotics and Automation Letters (RA-L), 2025*
